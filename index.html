@@ -2,47 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Journal Archives</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Issues / Archives</title>
+    <style>
+        /* Minimal Professional Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .issue-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .issue-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .issue-item:last-child {
+            border-bottom: none;
+        }
+        .issue-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .download-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .download-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #555;
+        }
+        footer strong {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 1. Main Header -->
+    <!-- Header -->
     <h1>Journal Issues / Archives</h1>
 
-    <!-- 2. Breadcrumb Navigation -->
-    <p>Home &gt; Journal &gt; Journal Issues / Archives</p>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">Home &gt; Journal &gt; Journal Issues / Archives</div>
 
-    <!-- 3. List of Issues -->
-    <!-- Replace the text below with your actual journal details -->
-    <p>
-        <strong>International Journal of Research</strong> VOL – 12 ISSUE 2 December 2023 – 
-        <a href="#">Download PDF</a>
-    </p>
-    <p>
-        <strong>International Journal of Research</strong> VOL – 12 ISSUE 1 June 2023 – 
-        <a href="#">Download PDF</a>
-    </p>
-    <p>
-        <strong>International Journal of Research</strong> VOL – 11 ISSUE 4 December 2022 – 
-        <a href="#">Download PDF</a>
-    </p>
-    <p>
-        <strong>International Journal of Research</strong> VOL – 11 ISSUE 3 September 2022 – 
-        <a href="#">Download PDF</a>
-    </p>
+    <!-- Issue List -->
+    <ul class="issue-list">
+        <li class="issue-item">
+            <span class="issue-title">Global Journal of Academic Research VOL – 12 ISSUE 2 December 2023</span>
+            <a href="#" class="download-link">Download PDF</a>
+        </li>
+        <li class="issue-item">
+            <span class="issue-title">Global Journal of Academic Research VOL – 12 ISSUE 1 June 2023</span>
+            <a href="#" class="download-link">Download PDF</a>
+        </li>
+        <li class="issue-item">
+            <span class="issue-title">Global Journal of Academic Research VOL – 11 ISSUE 4 December 2022</span>
+            <a href="#" class="download-link">Download PDF</a>
+        </li>
+        <li class="issue-item">
+            <span class="issue-title">Global Journal of Academic Research VOL – 11 ISSUE 3 September 2022</span>
+            <a href="#" class="download-link">Download PDF</a>
+        </li>
+        <li class="issue-item">
+            <span class="issue-title">Global Journal of Academic Research VOL – 11 ISSUE 2 June 2022</span>
+            <a href="#" class="download-link">Download PDF</a>
+        </li>
+        <li class="issue-item">
+            <span class="issue-title">Global Journal of Academic Research VOL – 11 ISSUE 1 March 2022</span>
+            <a href="#" class="download-link">Download PDF</a>
+        </li>
+    </ul>
 
-    <!-- 4. Footer Section -->
-    <hr>
-    <p><strong>International Journal of Research</strong></p>
-    <p>
-        A peer-reviewed publication dedicated to advancing knowledge in science, technology, and social sciences. 
-        We publish high-quality research articles, reviews, and case studies.
-    </p>
-    <p>
-        <strong>Contact Us:</strong><br>
-        Email: editor@yourjournal.com<br>
-        Address: 123 Academic Way, Research City, 54321
-    </p>
+    <!-- Footer -->
+    <footer>
+        <p><strong>Global Journal of Academic Research</strong></p>
+        <p>A peer-reviewed publication dedicated to advancing knowledge in science, technology, and social sciences. We publish high-quality research articles, reviews, and case studies.</p>
+        <p><strong>Contact Us:</strong><br>
+        Email: editor@globaljournal.com<br>
+        Address: 123 Academic Way, Research City, 54321</p>
+    </footer>
 
 </body>
 </html>
