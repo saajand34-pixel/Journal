@@ -5,138 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal Archives | Global Journal of Research</title>
     <style>
+        /* ============================================
+           PERFECT ALIGNMENT & PROFESSIONAL DESIGN
+           ============================================ */
+        
         /* General Page Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f6f8;
             color: #333;
-            margin: 0;
-            padding: 0;
             line-height: 1.6;
         }
 
-        /* Container to center content */
+        /* Container - Centered with max width */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
             background-color: #ffffff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Header Section */
+        /* Header Section - Perfectly Centered */
         header {
             text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #0056b3;
+            padding: 50px 0 40px;
+            border-bottom: 3px solid #0056b3;
             margin-bottom: 30px;
         }
 
         header h1 {
             color: #0056b3;
             margin: 0;
-            font-size: 32px;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         header p {
             color: #666;
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 16px;
+            font-weight: 500;
         }
 
-        /* Breadcrumb */
+        /* Breadcrumb - Left Aligned */
         .breadcrumb {
             font-size: 14px;
             color: #777;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             padding-left: 10px;
+            border-left: 4px solid #0056b3;
+            padding-left: 15px;
         }
+
         .breadcrumb a {
             color: #0056b3;
             text-decoration: none;
+            font-weight: 500;
         }
+
         .breadcrumb a:hover {
             text-decoration: underline;
         }
 
-        /* Table Styling for Issues */
+        .breadcrumb strong {
+            color: #333;
+        }
+
+        /* Table Container - Perfect Alignment */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 50px;
+        }
+
         .archive-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 40px;
+            border: 1px solid #ddd;
         }
 
         .archive-table th {
             background-color: #0056b3;
             color: white;
             text-align: left;
-            padding: 15px;
+            padding: 18px 20px;
             font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .archive-table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
+            padding: 18px 20px;
+            border-bottom: 1px solid #eee;
             font-size: 15px;
+            vertical-align: middle;
+        }
+
+        .archive-table tr {
+            transition: background-color 0.2s;
         }
 
         .archive-table tr:hover {
-            background-color: #f9f9f9;
+            background-color: #f0f7ff;
         }
 
         .archive-table tr:nth-child(even) {
-            background-color: #fcfcfc;
+            background-color: #fafafa;
         }
 
-        /* Download Button Style */
+        /* Column Specific Alignment */
+        .col-volume {
+            width: 25%;
+            font-weight: 600;
+            color: #0056b3;
+        }
+
+        .col-date {
+            width: 35%;
+            color: #555;
+        }
+
+        .col-action {
+            width: 40%;
+            text-align: right;
+        }
+
+        /* Download Button - Perfectly Aligned */
         .download-btn {
             display: inline-block;
-            background-color: #28a745;
+            background-color: #0056b3;
             color: white;
-            padding: 8px 15px;
+            padding: 10px 25px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 14px;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,86,179,0.2);
         }
 
         .download-btn:hover {
-            background-color: #218838;
+            background-color: #004494;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,86,179,0.3);
         }
 
-        /* Footer Section */
+        /* Footer - Perfectly Centered */
         footer {
-            background-color: #333;
+            background-color: #1a1a2e;
             color: #fff;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
-            margin-top: 50px;
+            margin-top: auto;
+            border-top: 4px solid #0056b3;
+        }
+
+        footer h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 20px;
         }
 
         footer p {
-            margin: 5px 0;
+            margin: 8px 0;
             font-size: 14px;
+            color: #ccc;
         }
 
         footer a {
             color: #4da3ff;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
         }
 
         /* Mobile Responsiveness */
-        @media (max-width: 600px) {
-            .archive-table th, .archive-table td {
-                padding: 10px;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .archive-table th,
+            .archive-table td {
+                padding: 12px 10px;
                 font-size: 13px;
             }
+
+            .col-action {
+                text-align: center;
+            }
+
             .download-btn {
                 display: block;
                 width: 100%;
                 text-align: center;
-                box-sizing: border-box;
             }
         }
     </style>
@@ -144,63 +220,65 @@
 <body>
 
     <div class="container">
-        <!-- Header -->
+        <!-- Header - Perfectly Centered -->
         <header>
             <h1>Global Journal of Research</h1>
             <p>Advancing Knowledge in Science & Technology</p>
         </header>
 
-        <!-- Breadcrumb -->
+        <!-- Breadcrumb - Left Aligned with Border -->
         <div class="breadcrumb">
             <a href="#">Home</a> &gt; <a href="#">Journal</a> &gt; <strong>Journal Issues / Archives</strong>
         </div>
 
-        <!-- Archive Table -->
-        <table class="archive-table">
-            <thead>
-                <tr>
-                    <th>Volume & Issue</th>
-                    <th>Publication Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Vol. 12, Issue 2</strong></td>
-                    <td>December 2023</td>
-                    <td><a href="#" class="download-btn">Download PDF</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Vol. 12, Issue 1</strong></td>
-                    <td>June 2023</td>
-                    <td><a href="#" class="download-btn">Download PDF</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Vol. 11, Issue 4</strong></td>
-                    <td>December 2022</td>
-                    <td><a href="#" class="download-btn">Download PDF</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Vol. 11, Issue 3</strong></td>
-                    <td>September 2022</td>
-                    <td><a href="#" class="download-btn">Download PDF</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Vol. 11, Issue 2</strong></td>
-                    <td>June 2022</td>
-                    <td><a href="#" class="download-btn">Download PDF</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Vol. 11, Issue 1</strong></td>
-                    <td>March 2022</td>
-                    <td><a href="#" class="download-btn">Download PDF</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Archive Table - Perfect Alignment -->
+        <div class="table-wrapper">
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th class="col-volume">Volume & Issue</th>
+                        <th class="col-date">Publication Date</th>
+                        <th class="col-action">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-volume">Vol. 12, Issue 2</td>
+                        <td class="col-date">December 2023</td>
+                        <td class="col-action"><a href="#" class="download-btn">Download PDF</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-volume">Vol. 12, Issue 1</td>
+                        <td class="col-date">June 2023</td>
+                        <td class="col-action"><a href="#" class="download-btn">Download PDF</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-volume">Vol. 11, Issue 4</td>
+                        <td class="col-date">December 2022</td>
+                        <td class="col-action"><a href="#" class="download-btn">Download PDF</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-volume">Vol. 11, Issue 3</td>
+                        <td class="col-date">September 2022</td>
+                        <td class="col-action"><a href="#" class="download-btn">Download PDF</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-volume">Vol. 11, Issue 2</td>
+                        <td class="col-date">June 2022</td>
+                        <td class="col-action"><a href="#" class="download-btn">Download PDF</a></td>
+                    </tr>
+                    <tr>
+                        <td class="col-volume">Vol. 11, Issue 1</td>
+                        <td class="col-date">March 2022</td>
+                        <td class="col-action"><a href="#" class="download-btn">Download PDF</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <!-- Footer -->
+        <!-- Footer - Perfectly Centered -->
         <footer>
-            <p><strong>Global Journal of Research</strong></p>
+            <h3>Global Journal of Research</h3>
             <p>123 Academic Way, Research City, 54321</p>
             <p>Email: <a href="mailto:editor@globaljournal.com">editor@globaljournal.com</a></p>
             <p>&copy; 2023 Global Journal of Research. All rights reserved.</p>
