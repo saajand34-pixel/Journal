@@ -7,7 +7,7 @@
     <style>
         /* ============================================
            PERFECT ALIGNMENT & PROFESSIONAL DESIGN
-           WITH NAVIGATION BAR (NO BREADCRUMB)
+           WITH WORKING HAMBURGER MENU
            ============================================ */
         
         /* General Page Styling */
@@ -44,6 +44,8 @@
             align-items: center;
             padding: 20px 0;
             border-bottom: 3px solid #0056b3;
+            position: relative;
+            z-index: 1000;
         }
 
         .navbar-brand {
@@ -96,6 +98,7 @@
             cursor: pointer;
             gap: 5px;
             padding: 10px;
+            z-index: 1001;
         }
 
         .hamburger span {
@@ -272,6 +275,7 @@
                 padding: 20px;
                 gap: 15px;
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
             }
 
             .navbar-menu.active {
@@ -281,6 +285,7 @@
             .navbar-menu a {
                 padding: 10px 0;
                 border-bottom: 1px solid #eee;
+                font-size: 16px;
             }
 
             .navbar-menu a:last-child {
@@ -315,7 +320,7 @@
         <!-- Navigation Bar -->
         <nav class="navbar">
             <a href="#" class="navbar-brand">Global Journal</a>
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -387,12 +392,36 @@
         </footer>
     </div>
 
+    <!-- ============================================
+         JAVASCRIPT - FIXED
+         ============================================ -->
     <script>
-        // Hamburger Menu Toggle
+        // Hamburger Menu Toggle Function
         function toggleMenu() {
             const menu = document.getElementById('navbarMenu');
+            const hamburger = document.getElementById('hamburger');
+            
+            // Toggle the active class
             menu.classList.toggle('active');
+            
+            // Animate hamburger icon
+            if (menu.classList.contains('active')) {
+                hamburger.style.transform = 'rotate(90deg)';
+            } else {
+                hamburger.style.transform = 'rotate(0deg)';
+            }
         }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('navbarMenu');
+            const hamburger = document.getElementById('hamburger');
+            
+            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+                hamburger.style.transform = 'rotate(0deg)';
+            }
+        });
     </script>
 
 </body>
