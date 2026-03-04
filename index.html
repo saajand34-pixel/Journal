@@ -7,6 +7,7 @@
     <style>
         /* ============================================
            PERFECT ALIGNMENT & PROFESSIONAL DESIGN
+           WITH NAVIGATION BAR
            ============================================ */
         
         /* General Page Styling */
@@ -34,11 +35,83 @@
             flex-direction: column;
         }
 
-        /* Header Section - Perfectly Centered */
+        /* ============================================
+           NAVIGATION BAR
+           ============================================ */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 3px solid #0056b3;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0056b3;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .navbar-menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .navbar-menu a:hover {
+            color: #0056b3;
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #0056b3;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .navbar-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #0056b3;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ============================================
+           HEADER SECTION
+           ============================================ */
         header {
             text-align: center;
-            padding: 50px 0 40px;
-            border-bottom: 3px solid #0056b3;
+            padding: 40px 0 30px;
             margin-bottom: 30px;
         }
 
@@ -58,7 +131,9 @@
             font-weight: 500;
         }
 
-        /* Breadcrumb - Left Aligned */
+        /* ============================================
+           BREADCRUMB
+           ============================================ */
         .breadcrumb {
             font-size: 14px;
             color: #777;
@@ -82,7 +157,9 @@
             color: #333;
         }
 
-        /* Table Container - Perfect Alignment */
+        /* ============================================
+           TABLE
+           ============================================ */
         .table-wrapper {
             overflow-x: auto;
             margin-bottom: 50px;
@@ -124,7 +201,6 @@
             background-color: #fafafa;
         }
 
-        /* Column Specific Alignment */
         .col-volume {
             width: 25%;
             font-weight: 600;
@@ -141,7 +217,6 @@
             text-align: right;
         }
 
-        /* Download Button - Perfectly Aligned */
         .download-btn {
             display: inline-block;
             background-color: #0056b3;
@@ -161,7 +236,9 @@
             box-shadow: 0 4px 8px rgba(0,86,179,0.3);
         }
 
-        /* Footer - Perfectly Centered */
+        /* ============================================
+           FOOTER
+           ============================================ */
         footer {
             background-color: #1a1a2e;
             color: #fff;
@@ -193,10 +270,51 @@
             color: #fff;
         }
 
-        /* Mobile Responsiveness */
+        /* ============================================
+           MOBILE RESPONSIVENESS
+           ============================================ */
         @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .navbar-brand {
+                font-size: 18px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #ffffff;
+                border-bottom: 2px solid #0056b3;
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-menu a {
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .navbar-menu a:last-child {
+                border-bottom: none;
+            }
+
             header h1 {
-                font-size: 26px;
+                font-size: 24px;
             }
 
             .archive-table th,
@@ -220,18 +338,33 @@
 <body>
 
     <div class="container">
-        <!-- Header - Perfectly Centered -->
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <a href="#" class="navbar-brand">Global Journal</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">Journal Issues / Archives</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header -->
         <header>
             <h1>Global Journal of Research</h1>
             <p>Advancing Knowledge in Science & Technology</p>
         </header>
 
-        <!-- Breadcrumb - Left Aligned with Border -->
+        <!-- Breadcrumb -->
         <div class="breadcrumb">
             <a href="#">Home</a> &gt; <a href="#">Journal</a> &gt; <strong>Journal Issues / Archives</strong>
         </div>
 
-        <!-- Archive Table - Perfect Alignment -->
+        <!-- Archive Table -->
         <div class="table-wrapper">
             <table class="archive-table">
                 <thead>
@@ -276,7 +409,7 @@
             </table>
         </div>
 
-        <!-- Footer - Perfectly Centered -->
+        <!-- Footer -->
         <footer>
             <h3>Global Journal of Research</h3>
             <p>123 Academic Way, Research City, 54321</p>
@@ -284,6 +417,14 @@
             <p>&copy; 2023 Global Journal of Research. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
